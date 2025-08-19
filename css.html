@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 CSS Property Examples</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .property-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .property-header {
+            padding: 15px;
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .property-content {
+            padding: 15px;
+        }
+        
+        .property-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .demo-area {
+            padding: 15px;
+            background-color: #f8f9fa;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            min-height: 60px;
+        }
+        
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2c3e50;
+            color: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .category-title {
+            grid-column: 1 / -1;
+            font-size: 22px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>100 CSS Property Examples</h1>
+        <button><a href="index.html" style="text-decoration:none;">HOME</a></button>
+        
+        <div class="property-grid">
+            
+            <div class="category-title">Text Properties</div>
+            
+            <!-- Example 1: color -->
+            <div class="property-card">
+                <div class="property-header">color</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the color of text</div>
+                    <div class="demo-area">
+                        <p style="color: #e74c3c;">This text is colored red</p>
+                    </div>
+                    <div class="code-block">color: #e74c3c;</div>
+                </div>
+            </div>
+            
+            <!-- Example 2: font-size -->
+            <div class="property-card">
+                <div class="property-header">font-size</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the size of the font</div>
+                    <div class="demo-area">
+                        <p style="font-size: 24px;">Large text size</p>
+                    </div>
+                    <div class="code-block">font-size: 24px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 3: font-weight -->
+            <div class="property-card">
+                <div class="property-header">font-weight</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the weight (boldness) of the font</div>
+                    <div class="demo-area">
+                        <p style="font-weight: bold;">Bold text</p>
+                    </div>
+                    <div class="code-block">font-weight: bold;</div>
+                </div>
+            </div>
+            
+            <!-- Example 4: font-family -->
+            <div class="property-card">
+                <div class="property-header">font-family</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies the font for text</div>
+                    <div class="demo-area">
+                        <p style="font-family: 'Courier New', monospace;">Monospace font</p>
+                    </div>
+                    <div class="code-block">font-family: 'Courier New', monospace;</div>
+                </div>
+            </div>
+            
+            <!-- Example 5: text-align -->
+            <div class="property-card">
+                <div class="property-header">text-align</div>
+                <div class="property-content">
+                    <div class="property-description">Aligns the text horizontally</div>
+                    <div class="demo-area" style="text-align: center;">
+                        <p>Centered text</p>
+                    </div>
+                    <div class="code-block">text-align: center;</div>
+                </div>
+            </div>
+            
+            <!-- Example 6: line-height -->
+            <div class="property-card">
+                <div class="property-header">line-height</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the height of a line of text</div>
+                    <div class="demo-area">
+                        <p style="line-height: 2;">Text with double line height<br>Second line</p>
+                    </div>
+                    <div class="code-block">line-height: 2;</div>
+                </div>
+            </div>
+            
+            <!-- Example 7: letter-spacing -->
+            <div class="property-card">
+                <div class="property-header">letter-spacing</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the space between characters</div>
+                    <div class="demo-area">
+                        <p style="letter-spacing: 3px;">Spaced out text</p>
+                    </div>
+                    <div class="code-block">letter-spacing: 3px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 8: text-decoration -->
+            <div class="property-card">
+                <div class="property-header">text-decoration</div>
+                <div class="property-content">
+                    <div class="property-description">Decorates text with underline/overline/etc.</div>
+                    <div class="demo-area">
+                        <p style="text-decoration: underline wavy;">Underlined text</p>
+                    </div>
+                    <div class="code-block">text-decoration: underline wavy;</div>
+                </div>
+            </div>
+            
+            <!-- Example 9: text-transform -->
+            <div class="property-card">
+                <div class="property-header">text-transform</div>
+                <div class="property-content">
+                    <div class="property-description">Controls capitalization of text</div>
+                    <div class="demo-area">
+                        <p style="text-transform: uppercase;">uppercase text</p>
+                    </div>
+                    <div class="code-block">text-transform: uppercase;</div>
+                </div>
+            </div>
+            
+            <!-- Example 10: text-shadow -->
+            <div class="property-card">
+                <div class="property-header">text-shadow</div>
+                <div class="property-content">
+                    <div class="property-description">Adds shadow to text</div>
+                    <div class="demo-area">
+                        <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Text with shadow</p>
+                    </div>
+                    <div class="code-block">text-shadow: 2px 2px 4px rgba(0,0,0,0.3);</div>
+                </div>
+            </div>
+            
+            <div class="category-title">Box Model Properties</div>
+            
+            <!-- Example 11: width -->
+            <div class="property-card">
+                <div class="property-header">width</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the width of an element</div>
+                    <div class="demo-area">
+                        <div style="width: 150px; height: 50px; background: #3498db;"></div>
+                    </div>
+                    <div class="code-block">width: 150px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 12: height -->
+            <div class="property-card">
+                <div class="property-header">height</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the height of an element</div>
+                    <div class="demo-area">
+                        <div style="width: 100px; height: 100px; background: #3498db;"></div>
+                    </div>
+                    <div class="code-block">height: 100px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 13: margin -->
+            <div class="property-card">
+                <div class="property-header">margin</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the outer space of an element</div>
+                    <div class="demo-area">
+                        <div style="margin: 20px; border: 1px solid #3498db; padding: 10px;">Element with margin</div>
+                    </div>
+                    <div class="code-block">margin: 20px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 14: padding -->
+            <div class="property-card">
+                <div class="property-header">padding</div>
+                <div class="property-content></div>
+                  
+                  
+                              <!-- Example 15: border -->
+            <div class="property-card">
+                <div class="property-header">border</div>
+                <div class="property-content">
+                    <div class="property-description">Sets all border properties in one declaration</div>
+                    <div class="demo-area">
+                        <div style="border: 3px dashed #e74c3c; padding: 10px;">Dashed border</div>
+                    </div>
+                    <div class="code-block">border: 3px dashed #e74c3c;</div>
+                </div>
+            </div>
+            
+            <!-- Example 16: border-radius -->
+            <div class="property-card">
+                <div class="property-header">border-radius</div>
+                <div class="property-content">
+                    <div class="property-description">Rounds the corners of an element</div>
+                    <div class="demo-area">
+                        <div style="border-radius: 15px; background: #3498db; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">border-radius: 15px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 17: box-shadow -->
+            <div class="property-card">
+                <div class="property-header">box-shadow</div>
+                <div class="property-content">
+                    <div class="property-description">Adds shadow effects around an element</div>
+                    <div class="demo-area">
+                        <div style="box-shadow: 5px 5px 15px rgba(0,0,0,0.2); height: 50px;"></div>
+                    </div>
+                    <div class="code-block">box-shadow: 5px 5px 15px rgba(0,0,0,0.2);</div>
+                </div>
+            </div>
+            
+            <!-- Example 18: box-sizing -->
+            <div class="property-card">
+                <div class="property-header">box-sizing</div>
+                <div class="property-content">
+                    <div class="property-description">Defines how width and height are calculated</div>
+                    <div class="demo-area">
+                        <div style="box-sizing: border-box; width: 100px; padding: 20px; border: 5px solid #3498db; background: #f1c40f;">
+                            Border-box
+                        </div>
+                    </div>
+                    <div class="code-block">box-sizing: border-box;</div>
+                </div>
+            </div>
+            
+            <!-- Example 19: overflow -->
+            <div class="property-card">
+                <div class="property-header">overflow</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies what happens if content overflows</div>
+                    <div class="demo-area" style="height: 50px; overflow-y: scroll;">
+                        <p>Content that exceeds container height will scroll. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="code-block">overflow-y: scroll;</div>
+                </div>
+            </div>
+            
+            <!-- Example 20: opacity -->
+            <div class="property-card">
+                <div class="property-header">opacity</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the transparency level</div>
+                    <div class="demo-area">
+                        <div style="opacity: 0.5; background: #3498db; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">opacity: 0.5;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Positioning Properties</div>
+            
+            <!-- Example 21: position -->
+            <div class="property-card">
+                <div class="property-header">position</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies the positioning method</div>
+                    <div class="demo-area" style="position: relative; height: 80px;">
+                        <div style="position: absolute; top: 10px; left: 20px; background: #e74c3c; width: 50px; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        position: absolute;<br>
+                        top: 10px;<br>
+                        left: 20px;
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 22: z-index -->
+            <div class="property-card">
+                <div class="property-header">z-index</div>
+                <div class="property-content">
+                    <div class="property-description">Controls stack order of positioned elements</div>
+                    <div class="demo-area" style="position: relative; height: 80px;">
+                        <div style="position: absolute; top: 10px; left: 10px; background: #3498db; width: 50px; height: 50px; z-index: 1;"></div>
+                        <div style="position: absolute; top: 30px; left: 30px; background: #e74c3c; width: 50px; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">z-index: 1;</div>
+                </div>
+            </div>
+            
+            <!-- Example 23: top, right, bottom, left -->
+            <div class="property-card">
+                <div class="property-header">top/right/bottom/left</div>
+                <div class="property-content">
+                    <div class="property-description">Position offsets for positioned elements</div>
+                    <div class="demo-area" style="position: relative; height: 80px;">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #2ecc71; width: 50px; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        position: absolute;<br>
+                        top: 10px;<br>
+                        right: 10px;
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 24: float -->
+            <div class="property-card">
+                <div class="property-header">float</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies how an element floats</div>
+                    <div class="demo-area">
+                        <div style="float: left; width: 50px; height: 50px; background: #3498db; margin-right: 10px;"></div>
+                        <p>Text flows around the floated element</p>
+                    </div>
+                    <div class="code-block">float: left;</div>
+                </div>
+            </div>
+            
+            <!-- Example 25: clear -->
+            <div class="property-card">
+                <div class="property-header">clear</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies what floats need to be cleared</div>
+                    <div class="demo-area">
+                        <div style="float: left; width: 50px; height: 50px; background: #3498db; margin-right: 10px;"></div>
+                        <div style="clear: left; background: #f1c40f; padding: 5px;">Cleared left</div>
+                    </div>
+                    <div class="code-block">clear: left;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Flexbox Properties</div>
+            
+            <!-- Example 26: display: flex -->
+            <div class="property-card">
+                <div class="property-header">display: flex</div>
+                <div class="property-content">
+                    <div class="property-description">Enables flexbox layout</div>
+                    <div class="demo-area" style="display: flex; gap: 10px;">
+                        <div style="background: #3498db; flex: 1; height: 50px;"></div>
+                        <div style="background: #e74c3c; flex: 1; height: 50px;"></div>
+                        <div style="background: #2ecc71; flex: 1; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        display: flex;<br>
+                        gap: 10px;
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 27: flex-direction -->
+            <div class="property-card">
+                <div class="property-header">flex-direction</div>
+                <div class="property-content">
+                    <div class="property-description">Defines direction of flex items</div>
+                    <div class="demo-area" style="display: flex; flex-direction: column; gap: 10px;">
+                        <div style="background: #3498db; height: 20px;"></div>
+                        <div style="background: #e74c3c; height: 20px;"></div>
+                        <div style="background: #2ecc71; height: 20px;"></div>
+                    </div>
+                    <div class="code-block">
+                        flex-direction: column;<br>
+                        gap: 10px;
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 28: justify-content -->
+            <div class="property-card">
+                <div class="property-header">justify-content</div>
+                <div class="property-content">
+                    <div class="property-description">Aligns items on main axis</div>
+                    <div class="demo-area" style="display: flex; justify-content: space-between;">
+                        <div style="background: #3498db; width: 50px; height: 50px;"></div>
+                        <div style="background: #e74c3c; width: 50px; height: 50px;"></div>
+                        <div style="background: #2ecc71; width: 50px; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">justify-content: space-between;</div>
+                </div>
+            </div>
+            
+            <!-- Example 29: align-items -->
+            <div class="property-card">
+                <div class="property-header">align-items</div>
+                <div class="property-content">
+                    <div class="property-description">Aligns items on cross axis</div>
+                    <div class="demo-area" style="display: flex; align-items: center; height: 100px;">
+                        <div style="background: #3498db; width: 50px; height: 30px;"></div>
+                        <div style="background: #e74c3c; width: 50px; height: 50px;"></div>
+                        <div style="background: #2ecc71; width: 50px; height: 70px;"></div>
+                    </div>
+                    <div class="code-block">align-items: center;</div>
+                </div>
+            </div>
+            
+            <!-- Example 30: flex-grow -->
+            <div class="property-card">
+                <div class="property-header">flex-grow</div>
+                <div class="property-content">
+                    <div class="property-description">Defines ability to grow if necessary</div>
+                    <div class="demo-area" style="display: flex;">
+                        <div style="background: #3498db; width: 50px; height: 50px;"></div>
+                        <div style="background: #e74c3c; flex-grow: 1; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">flex-grow: 1;</div>
+                </div>
+            </div>
+
+            <!-- Continue with more properties in this pattern -->
+            <!-- Each property card follows the same structure -->
+            <!-- The complete file would include all 100 properties -->
+
+        </div>
+    </div>
+                  <!-- Example 31: flex-wrap -->
+            <div class="property-card">
+                <div class="property-header">flex-wrap</div>
+                <div class="property-content">
+                    <div class="property-description">Controls whether flex items wrap or not</div>
+                    <div class="demo-area" style="display: flex; flex-wrap: wrap; width: 200px;">
+                        <div style="background: #3498db; width: 80px; height: 50px; margin: 5px;"></div>
+                        <div style="background: #e74c3c; width: 80px; height: 50px; margin: 5px;"></div>
+                        <div style="background: #2ecc71; width: 80px; height: 50px; margin: 5px;"></div>
+                    </div>
+                    <div class="code-block">flex-wrap: wrap;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Grid Properties</div>
+            
+            <!-- Example 32: display: grid -->
+            <div class="property-card">
+                <div class="property-header">display: grid</div>
+                <div class="property-content">
+                    <div class="property-description">Enables grid layout</div>
+                    <div class="demo-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div style="background: #3498db; height: 50px;"></div>
+                        <div style="background: #e74c3c; height: 50px;"></div>
+                        <div style="background: #2ecc71; height: 50px;"></div>
+                        <div style="background: #f1c40f; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        display: grid;<br>
+                        grid-template-columns: 1fr 1fr;<br>
+                        gap: 10px;
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 33: grid-template-columns -->
+            <div class="property-card">
+                <div class="property-header">grid-template-columns</div>
+                <div class="property-content">
+                    <div class="property-description">Defines line names and sizing of grid columns</div>
+                    <div class="demo-area" style="display: grid; grid-template-columns: 100px auto 2fr; gap: 5px;">
+                        <div style="background: #3498db; height: 30px;"></div>
+                        <div style="background: #e74c3c; height: 30px;"></div>
+                        <div style="background: #2ecc71; height: 30px;"></div>
+                    </div>
+                    <div class="code-block">grid-template-columns: 100px auto 2fr;</div>
+                </div>
+            </div>
+            
+            <!-- Example 34: grid-template-rows -->
+            <div class="property-card">
+                <div class="property-header">grid-template-rows</div>
+                <div class="property-content">
+                    <div class="property-description">Defines line names and sizing of grid rows</div>
+                    <div class="demo-area" style="display: grid; grid-template-rows: 50px 100px; gap: 5px;">
+                        <div style="background: #3498db;"></div>
+                        <div style="background: #e74c3c;"></div>
+                    </div>
+                    <div class="code-block">grid-template-rows: 50px 100px;</div>
+                </div>
+            </div>
+            
+            <!-- Example 35: grid-column / grid-row -->
+            <div class="property-card">
+                <div class="property-header">grid-column / grid-row</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies grid item's location</div>
+                    <div class="demo-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                        <div style="background: #3498db; grid-column: 1 / 3; height: 30px;"></div>
+                        <div style="background: #e74c3c; height: 50px;"></div>
+                        <div style="background: #2ecc71; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">grid-column: 1 / 3;</div>
+                </div>
+            </div>
+            
+            <!-- Example 36: grid-gap -->
+            <div class="property-card">
+                <div class="property-header">grid-gap</div>
+                <div class="property-content">
+                    <div class="property-description">Defines size of gaps between grid items</div>
+                    <div class="demo-area" style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 15px;">
+                        <div style="background: #3498db; height: 30px;"></div>
+                        <div style="background: #e74c3c; height: 30px;"></div>
+                        <div style="background: #2ecc71; height: 30px;"></div>
+                        <div style="background: #f1c40f; height: 30px;"></div>
+                    </div>
+                    <div class="code-block">grid-gap: 15px;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Transition & Animation</div>
+            
+            <!-- Example 37: transition -->
+            <div class="property-card">
+                <div class="property-header">transition</div>
+                <div class="property-content">
+                    <div class="property-description">Creates smooth transitions between states</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #3498db; transition: all 0.5s;"
+                             onmouseover="this.style.width='100px';this.style.background='#e74c3c'" 
+                             onmouseout="this.style.width='50px';this.style.background='#3498db'">
+                        Hover me!
+                        </div>
+                    </div>
+                    <div class="code-block">transition: all 0.5s;</div>
+                </div>
+            </div>
+            
+            <!-- Example 38: animation -->
+            <div class="property-card">
+                <div class="property-header">animation</div>
+                <div class="property-content">
+                    <div class="property-description">Applies keyframe animations</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #3498db; 
+                                  animation: bounce 1s infinite;"></div>
+                    </div>
+                    <style>
+                    @keyframes bounce {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-20px); }
+                    }
+                    </style>
+                    <div class="code-block">
+                        animation: bounce 1s infinite;<br><br>
+                        @keyframes bounce {<br>
+                        &nbsp;&nbsp;0%, 100% { transform: translateY(0); }<br>
+                        &nbsp;&nbsp;50% { transform: translateY(-20px); }<br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 39: transform -->
+            <div class="property-card">
+                <div class="property-header">transform</div>
+                <div class="property-content">
+                    <div class="property-description">Applies 2D/3D transformations</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #3498db; transform: rotate(45deg);"></div>
+                    </div>
+                    <div class="code-block">transform: rotate(45deg);</div>
+                </div>
+            </div>
+            
+            <!-- Example 40: transform-origin -->
+            <div class="property-card">
+                <div class="property-header">transform-origin</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the origin for transformations</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #3498db; 
+                                  transform: rotate(45deg); transform-origin: 0 0;"></div>
+                    </div>
+                    <div class="code-block">
+                        transform: rotate(45deg);<br>
+                        transform-origin: 0 0;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue adding more properties following the same pattern -->
+            <!-- The complete file would include all 100 properties organized by category -->
+            
+        </div>
+    </div>
+            <div class="category-title">Background Properties</div>
+
+            <!-- Example 41: background-image -->
+            <div class="property-card">
+                <div class="property-header">background-image</div>
+                <div class="property-content">
+                    <div class="property-description">Sets one or more background images</div>
+                    <div class="demo-area">
+                        <div style="height: 100px; background-image: linear-gradient(to right, #3498db, #2ecc71);"></div>
+                    </div>
+                    <div class="code-block">
+                        background-image: linear-gradient(to right, #3498db, #2ecc71);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 42: background-size -->
+            <div class="property-card">
+                <div class="property-header">background-size</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies the size of background images</div>
+                    <div class="demo-area">
+                        <div style="height: 100px; background: url('https://placehold.co/100x100') no-repeat; background-size: cover;"></div>
+                    </div>
+                    <div class="code-block">
+                        background-size: cover;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 43: background-position -->
+            <div class="property-card">
+                <div class="property-header">background-position</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the initial position of background images</div>
+                    <div class="demo-area">
+                        <div style="height: 100px; background: url('https://placehold.co/50x50') no-repeat right bottom #f8f9fa;"></div>
+                    </div>
+                    <div class="code-block">
+                        background-position: right bottom;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 44: background-attachment -->
+            <div class="property-card">
+                <div class="property-header">background-attachment</div>
+                <div class="property-content">
+                    <div class="property-description">Sets whether background images scroll with content</div>
+                    <div class="demo-area">
+                        <div style="height: 100px; overflow: scroll; background-attachment: fixed; 
+                             background: url('https://placehold.co/300x300') no-repeat;"></div>
+                    </div>
+                    <div class="code-block">
+                        background-attachment: fixed;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 45: background-blend-mode -->
+            <div class="property-card">
+                <div class="property-header">background-blend-mode</div>
+                <div class="property-content">
+                    <div class="property-description">Defines blending mode of background layers</div>
+                    <div class="demo-area">
+                        <div style="height: 100px; 
+                             background: linear-gradient(45deg, #3498db 0%, #e74c3c 100%),
+                                         url('https://placehold.co/200x200');
+                             background-blend-mode: overlay;"></div>
+                    </div>
+                    <div class="code-block">
+                        background-blend-mode: overlay;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Transform & Filter Properties</div>
+
+            <!-- Example 46: rotate() -->
+            <div class="property-card">
+                <div class="property-header">transform: rotate()</div>
+                <div class="property-content">
+                    <div class="property-description">Rotates an element around a fixed point</div>
+                    <div class="demo-area">
+                        <div style="width: 80px; height: 30px; background: #3498db; 
+                            margin: 20px auto; transform: rotate(20deg);"></div>
+                    </div>
+                    <div class="code-block">
+                        transform: rotate(20deg);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 47: scale() -->
+            <div class="property-card">
+                <div class="property-header">transform: scale()</div>
+                <div class="property-content">
+                    <div class="property-description">Scales an element larger or smaller</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #e74c3c; 
+                            margin: 20px auto; transform: scale(1.5);"></div>
+                    </div>  
+                    <div class="code-block">
+                        transform: scale(1.5);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 48: filter -->
+            <div class="property-card">
+                <div class="property-header">filter</div>
+                <div class="property-content">
+                    <div class="property-description">Applies visual effects like blur or color shifts</div>
+                    <div class="demo-area">
+                        <img src="https://placehold.co/200x100" alt="Sample image" style="filter: grayscale(100%); width: 100%;">  
+                    </div>
+                    <div class="code-block">
+                        filter: grayscale(100%);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 49: backdrop-filter -->
+            <div class="property-card">
+                <div class="property-header">backdrop-filter</div>
+                <div class="property-content">
+                    <div class="property-description">Applies filters to area behind element</div>
+                    <div class="demo-area" style="position: relative;">
+                        <div style="background: url('https://placehold.co/300x200'); 
+                             height: 100px;"></div>
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                             backdrop-filter: blur(5px);"></div>
+                    </div>
+                    <div class="code-block">
+                        backdrop-filter: blur(5px);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 50: mix-blend-mode -->
+            <div class="property-card">
+                <div class="property-header">mix-blend-mode</div>
+                <div class="property-content">
+                    <div class="property-description">Defines how element content blends with background</div>
+                    <div class="demo-area" style="background: #f1c40f; padding: 10px;">
+                        <div style="background: #3498db; mix-blend-mode: multiply; 
+                             height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        mix-blend-mode: multiply;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional examples would continue here -->
+            <!-- Following the same pattern for remaining properties -->
+            
+        </div>
+    </div>
+
+            <div class="category-title">Transition & Animation Properties</div>
+
+            <!-- Example 51: transition-property -->
+            <div class="property-card">
+                <div class="property-header">transition-property</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies which properties to transition</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #3498db;
+                            transition-property: width, height; transition-duration: 0.5s;"
+                            onclick="this.style.width = '100px'; this.style.height = '100px'">
+                            Click me
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        transition-property: width, height;<br>
+                        transition-duration: 0.5s;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 52: transition-duration -->
+            <div class="property-card">
+                <div class="property-header">transition-duration</div>
+                <div class="property-content">
+                    <div class="property-description">Sets duration of transition effect</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #e74c3c;
+                            transition: all 2s;"
+                            onclick="this.style.width = '100px'">
+                            Click me
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        transition-duration: 2s;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 53: transition-timing-function -->
+            <div class="property-card">
+                <div class="property-header">transition-timing-function</div>
+                <div class="property-content">
+                    <div class="property-description">Controls speed progression of transition</div>
+                    <div class="demo-area">
+                        <div style="display: flex; gap: 5px;">
+                            <div onclick="this.style.width = '100px'" 
+                                style="width: 50px; height: 50px; background: #3498db;
+                                transition: width 1s ease-in;">ease-in</div>
+                            <div onclick="this.style.width = '100px'"
+                                style="width: 50px; height: 50px; background: #e74c3c;
+                                transition: width 1s ease-out;">ease-out</div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        transition-timing-function: ease-in;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 54: animation-name -->
+            <div class="property-card">
+                <div class="property-header">animation-name</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies name of @keyframes animation</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #2ecc71;
+                            animation: fadeIn 2s infinite;"></div>
+                        <style>
+                            @keyframes fadeIn {
+                                from { opacity: 0; }
+                                to { opacity: 1; }
+                            }
+                        </style>
+                    </div>
+                    <div class="code-block">
+                        animation-name: fadeIn; <br>
+                        @keyframes fadeIn {<br>
+                        &nbsp;&nbsp;from { opacity: 0; }<br>
+                        &nbsp;&nbsp;to { opacity: 1; }<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 55: animation-duration -->  
+            <div class="property-card">
+                <div class="property-header">animation-duration</div>
+                <div class="property-content">
+                    <div class="property-description">Sets length time animation takes</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #f1c40f;
+                            animation: spin 3s linear infinite;"></div>
+                        <style>
+                            @keyframes spin {
+                                to { transform: rotate(360deg); }
+                            }
+                        </style>
+                    </div>
+                    <div class="code-block">
+                        animation-duration: 3s;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Flexbox Properties</div>
+
+            <!-- Example 56: flex-direction -->
+            <div class="property-card">
+                <div class="property-header">flex-direction</div>
+                <div class="property-content">
+                    <div class="property-description">Sets direction of flex items</div>
+                    <div class="demo-area" style="display: flex; flex-direction: column; height: 150px;">
+                        <div style="background: #3498db; height: 40px;"></div>
+                        <div style="background: #e74c3c; height: 40px;"></div>
+                    </div>
+                    <div class="code-block">
+                        flex-direction: column;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 57: flex-wrap -->
+            <div class="property-card">
+                <div class="property-header">flex-wrap</div>
+                <div class="property-content">
+                    <div class="property-description">Controls whether items wrap to new lines</div>  
+                    <div class="demo-area" style="display: flex; flex-wrap: wrap; width: 180px;">
+                        <div style="width: 100px; height: 50px; background: #2ecc71;"></div>  
+                        <div style="width: 100px; height: 50px; background: #f1c40f;"></div>
+                        <div style="width: 100px; height: 50px; background: #3498db;"></div>
+                    </div>
+                    <div class="code-block">
+                        flex-wrap: wrap;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 58: justify-content -->
+            <div class="property-card">
+                <div class="property-header">justify-content</div>
+                <div class="property-content">
+                    <div class="property-description">Aligns items along main axis</div>
+                    <div class="demo-area" style="display: flex; justify-content: space-around;">
+                        <div style="width: 40px; height: 40px; background: #e74c3c;"></div>
+                        <div style="width: 40px; height: 40px; background: #2ecc71;"></div>
+                    </div>
+                    <div class="code-block">
+                        justify-content: space-around;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 59: align-items -->
+            <div class="property-card">
+                <div class="property-header">align-items</div>
+                <div class="property-content">
+                    <div class="property-description">Aligns items along cross axis</div>
+                    <div class="demo-area" style="display: flex; height: 100px; align-items: center; border: 1px solid #ddd;">
+                        <div style="width: 50px; height: 30px; background: #3498db;"></div>
+                    </div>
+                    <div class="code-block">
+                        align-items: center;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 60: gap -->
+            <div class="property-card">
+                <div class="property-header">gap</div>
+                <div class="property-content">
+                    <div class="property-description">Sets gaps between flex/grid items</div>
+                    <div class="demo-area" style="display: flex; gap: 15px;">
+                        <div style="width: 40px; height: 40px; background: #f1c40f;"></div>
+                        <div style="width: 40px; height: 40px; background: #e74c3c;"></div>
+                    </div>
+                    <div class="code-block">
+                        gap: 15px;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue adding more properties following same pattern -->
+            
+        </div>
+    </div>
+
+            <div class="category-title">Transition & Animation Properties</div>
+
+            <!-- Example 51: transition-property -->
+            <div class="property-card">
+                <div class="property-header">transition-property</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies which properties to animate</div>
+                    <div class="demo-area">
+                        <style>
+                            .demo-transition-prop {
+                                width: 50px;
+                                height: 50px;
+                                background: #3498db;
+                                transition-property: width, background;
+                                transition-duration: 1s;
+                            }
+                            .demo-transition-prop:hover {
+                                width: 100px;
+                                background: #e74c3c;
+                            }
+                        </style>
+                        <div class="demo-transition-prop"></div>
+                    </div>
+                    <div class="code-block">
+                        transition-property: width, background;<br>
+                        transition-duration: 1s;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 52: transition-duration -->
+            <div class="property-card">
+                <div class="property-header">transition-duration</div>
+                <div class="property-content">
+                    <div class="property-description">Sets length of transition animation</div>
+                    <div class="demo-area">
+                        <style>
+                            .demo-transition-duration {
+                                width: 50px;
+                                height: 50px;
+                                background: #3498db;
+                                transition: all 2s;
+                            }
+                            .demo-transition-duration:hover {
+                                width: 100px;
+                            }
+                        </style>
+                        <div class="demo-transition-duration"></div>
+                    </div>
+                    <div class="code-block">
+                        transition-duration: 2s;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 53: transition-timing-function -->
+            <div class="property-card">
+                <div class="property-header">transition-timing-function</div>
+                <div class="property-content">
+                    <div class="property-description">Sets speed curve of transition</div>
+                    <div class="demo-area">
+                        <style>
+                            .demo-timing-fn {
+                                width: 50px;
+                                height: 50px;
+                                background: #3498db;
+                                transition: all 2s ease-in-out;
+                            }
+                            .demo-timing-fn:hover {
+                                transform: translateX(100px);
+                            }
+                        </style>
+                        <div class="demo-timing-fn"></div>
+                    </div>
+                    <div class="code-block">
+                        transition-timing-function: ease-in-out;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">List & Table Properties</div>
+
+            <!-- Example 54: list-style-type -->
+            <div class="property-card">
+                <div class="property-header">list-style-type</div>
+                <div class="property-content">
+                    <div class="property-description">Sets the marker type for lists</div>
+                    <div class="demo-area">
+                        <ul style="list-style-type: square;">
+                            <li>First item</li>
+                            <li>Second item</li>
+                        </ul>
+                    </div>
+                    <div class="code-block">
+                        list-style-type: square;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 55: border-collapse -->
+            <div class="property-card">
+                <div class="property-header">border-collapse</div>
+                <div class="property-content">
+                    <div class="property-description">Controls table borders collapsing</div>
+                    <div class="demo-area">
+                        <table style="border-collapse: collapse; width: 100%;">
+                            <tr>
+                                <td style="border: 1px solid #333;">Cell 1</td>
+                                <td style="border: 1px solid #333;">Cell 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="code-block">
+                        border-collapse: collapse;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Miscellaneous Properties</div>
+
+            <!-- Example 56: cursor -->
+            <div class="property-card">
+                <div class="property-header">cursor</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies the mouse cursor</div>
+                    <div class="demo-area">
+                        <div style="cursor: pointer; padding: 10px; background: #f0f0f0;">
+                            Hover me (pointer cursor)
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        cursor: pointer;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 57: user-select -->
+            <div class="property-card">
+                <div class="property-header">user-select</div>
+                <div class="property-content">
+                    <div class="property-description">Controls text selection</div>
+                    <div class="demo-area">
+                        <div style="user-select: none; padding: 10px; background: #f0f0f0;">
+                            Can't select this text
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        user-select: none;
+                    </div>
+                </div>
+            </div>
+
+            <!-- The pattern continues for remaining properties -->
+            <!-- Each new property will follow the same card structure -->
+
+            <!-- Example 58-100 would continue in this format -->
+            <!-- We've now shown 57 examples with space optimization -->
+
+        </div>
+    </div>
+            <div class="category-title">Flexbox Properties</div>
+
+            <!-- Example 59: flex-direction -->
+            <div class="property-card">
+                <div class="property-header">flex-direction</div>
+                <div class="property-content">
+                    <div class="property-description">Defines main axis direction of flex items</div>
+                    <div class="demo-area" style="display: flex; flex-direction: column; height: 150px;">
+                        <div style="background: #3498db; flex: 1; margin: 2px;"></div>
+                        <div style="background: #e74c3c; flex: 1; margin: 2px;"></div>
+                    </div>
+                    <div class="code-block">
+                        display: flex;<br>
+                        flex-direction: column;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 60: flex-wrap -->
+            <div class="property-card">
+                <div class="property-header">flex-wrap</div>
+                <div class="property-content">
+                    <div class="property-description">Controls if flex items wrap or not</div>
+                    <div class="demo-area" style="display: flex; flex-wrap: wrap; width: 150px;">
+                        <div style="background: #3498db; width: 80px; height: 30px; margin: 2px;"></div>
+                        <div style="background: #e74c3c; width: 80px; height: 30px; margin: 2px;"></div>
+                        <div style="background: #2ecc71; width: 80px; height: 30px; margin: 2px;"></div>
+                    </div>
+                    <div class="code-block">
+                        display: flex;<br>
+                        flex-wrap: wrap;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Grid Properties</div>
+
+            <!-- Example 61: grid-template-areas -->
+            <div class="property-card">
+                <div class="property-header">grid-template-areas</div>
+                <div class="property-content">
+                    <div class="property-description">Defines named grid areas</div>
+                    <div class="demo-area" style="
+                        display: grid;
+                        grid-template-areas: 'header header' 'sidebar main';
+                        grid-template-columns: 100px 1fr;
+                        grid-template-rows: 50px 100px;
+                        gap: 5px;
+                    ">
+                        <div style="grid-area: header; background: #3498db;"></div>
+                        <div style="grid-area: sidebar; background: #e74c3c;"></div>
+                        <div style="grid-area: main; background: #2ecc71;"></div>
+                    </div>
+                    <div class="code-block">
+                        grid-template-areas: <br>
+                        &nbsp;&nbsp;'header header'<br>
+                        &nbsp;&nbsp;'sidebar main';<br>
+                        grid-template-columns: 100px 1fr;<br>
+                        grid-template-rows: 50px 100px;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 62: place-items -->
+            <div class="property-card">
+                <div class="property-header">place-items</div>
+                <div class="property-content">
+                    <div class="property-description">Shorthand for align-items and justify-items</div>
+                    <div class="demo-area" style="
+                        display: grid;
+                        place-items: center center;
+                        height: 100px;
+                        background: #f0f0f0;
+                    ">
+                        <div style="background: #3498db; width: 50px; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        place-items: center center;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Advanced Layout</div>
+
+            <!-- Example 63: columns -->
+            <div class="property-card">
+                <div class="property-header">columns</div>
+                <div class="property-content">
+                    <div class="property-description">Shorthand for column-width and column-count</div>
+                    <div class="demo-area" style="
+                        columns: 2 100px;
+                        height: 70px;
+                        overflow: hidden;
+                    ">
+                        <p>Text content that flows into multiple columns...</p>
+                    </div>
+                    <div class="code-block">
+                        columns: 2 100px;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 64: gap -->
+            <div class="property-card">
+                <div class="property-header">gap</div>
+                <div class="property-content">
+                    <div class="property-description">Sets gaps between grid/flex items</div>
+                    <div class="demo-area" style="
+                        display: flex;
+                        gap: 20px;
+                    ">
+                        <div style="background: #3498db; flex: 1;"></div>
+                        <div style="background: #e74c3c; flex: 1;"></div>
+                    </div>
+                    <div class="code-block">
+                        gap: 20px;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 65: aspect-ratio -->
+            <div class="property-card">
+                <div class="property-header">aspect-ratio</div>
+                <div class="property-content">
+                    <div class="property-description">Controls ratio of width to height</div>
+                    <div class="demo-area" style="
+                        aspect-ratio: 16/9;
+                        background: #3498db;
+                    "></div>
+                    <div class="code-block">
+                        aspect-ratio: 16/9;
+                    </div>
+                </div>
+            </div>
+
+            <!-- The pattern continues for all 100 properties -->
+            <!-- Each follows the same card structure with:
+                 1. Property name header
+                 2. Description 
+                 3. Visual demo  
+                 4. Code snippet 
+            -->
+        </div>
+    </div>
+            <div class="category-title">Transform & Transition Properties</div>
+
+            <!-- Example 66: transform: translate() -->
+            <div class="property-card">
+                <div class="property-header">transform: translate()</div>
+                <div class="property-content">
+                    <div class="property-description">Moves element without affecting layout</div>
+                    <div class="demo-area">
+                        <div style="width: 50px; height: 50px; background: #3498db; transform: translate(20px, 10px);"></div>
+                    </div>
+                    <div class="code-block">transform: translate(20px, 10px);</div>
+                </div>
+            </div>
+
+            <!-- Example 67: transition-delay -->
+            <div class="property-card">
+                <div class="property-header">transition-delay</div>
+                <div class="property-content">
+                    <div class="property-description">Sets delay before transition starts</div>
+                    <div class="demo-area">
+                        <style>
+                            .delay-demo {
+                                width: 50px;
+                                height: 50px;
+                                background: #3498db;
+                                transition: width 1s;
+                                transition-delay: 0.5s;
+                            }
+                            .delay-demo:hover {
+                                width: 100px;
+                            }
+                        </style>
+                        <div class="delay-demo"></div>
+                    </div>
+                    <div class="code-block">
+                        transition-delay: 0.5s;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Filter & Blend Modes</div>
+
+            <!-- Example 68: filter: blur() -->
+            <div class="property-card">
+                <div class="property-header">filter: blur()</div>
+                <div class="property-content">
+                    <div class="property-description">Applies gaussian blur</div>
+                    <div class="demo-area">
+                        <div style="filter: blur(2px); background: url('https://placehold.co/150x100'); height: 60px;"></div>
+                    </div>
+                    <div class="code-block">filter: blur(2px);</div>
+                </div>
+            </div>
+
+            <!-- Example 69: mix-blend-mode -->
+            <div class="property-card">
+                <div class="property-header">mix-blend-mode</div>
+                <div class="property-content">
+                    <div class="property-description">Blends element with background elements</div>
+                    <div class="demo-area" style="background: #f39c12; padding: 10px;">
+                        <div style="mix-blend-mode: multiply; background: #3498db; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">mix-blend-mode: multiply;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Scroll & Overflow</div>
+
+            <!-- Example 70: overscroll-behavior -->
+            <div class="property-card">
+                <div class="property-header">overscroll-behavior</div>
+                <div class="property-content">
+                    <div class="property-description">Controls behavior when scrolling past boundaries</div>
+                    <div class="demo-area" style="height: 100px; overflow: scroll;">
+                        <div style="height: 200px; overscroll-behavior: contain;">Content with contained overscroll</div>
+                    </div>
+                    <div class="code-block">overscroll-behavior: contain;</div>
+                </div>
+            </div>
+
+            <!-- Example 71-100 would continue with remaining properties like: 
+                 shape-outside, 
+                 clip-path, 
+                 scroll-snap-type,
+                 backdrop-filter,
+                 writing-mode,
+                 perspective,
+                 var(),
+                 accent-color,
+                 scroll-behavior,
+                 etc.
+            -->
+        </div>
+    </div>
+            <div class="category-title">Advanced Selectors & Custom Properties</div>
+
+            <!-- Example 71: :is() pseudo-class -->
+            <div class="property-card">
+                <div class="property-header">:is()</div>
+                <div class="property-content">
+                    <div class="property-description">Matches any element from list of selectors</div>
+                    <div class="demo-area">
+                        <style>
+                            .demo-is :is(h2, h3) {
+                                color: #e74c3c;
+                            }
+                        </style>
+                        <div class="demo-is">
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        :is(h2, h3) {<br>
+                        &nbsp;&nbsp;color: #e74c3c;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 72: Custom Properties (--var) -->
+            <div class="property-card">
+                <div class="property-header">CSS Variables</div>
+                <div class="property-content">
+                    <div class="property-description">Defines reusable custom properties</div>
+                    <div class="demo-area">
+                        <style>
+                            .demo-vars {
+                                --main-color: #3498db;
+                                background: var(--main-color);
+                                height: 50px;
+                            }
+                        </style>
+                        <div class="demo-vars"></div>
+                    </div>
+                    <div class="code-block">
+                        :root {<br>
+                        &nbsp;&nbsp;--main-color: #3498db;<br>
+                        }<br>
+                        .element {<br>
+                        &nbsp;&nbsp;background: var(--main-color);<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Scroll & Animation Control</div>
+
+            <!-- Example 73: scroll-behavior -->
+            <div class="property-card">
+                <div class="property-header">scroll-behavior</div>
+                <div class="property-content">
+                    <div class="property-description">Controls smooth scrolling</div>
+                    <div class="demo-area">
+                        <div style="height: 100px; overflow-y: scroll; scroll-behavior: smooth;" id="scrollDemo">
+                            <div style="height: 300px;">Scrollable content with smooth behavior</div>
+                        </div>
+                    </div>
+                    <div class="code-block">scroll-behavior: smooth;</div>
+                </div>
+            </div>
+
+            <!-- Example 74: animation-fill-mode -->
+            <div class="property-card">
+                <div class="property-header">animation-fill-mode</div>
+                <div class="property-content">
+                    <div class="property-description">Controls styles before/after animation</div>
+                    <div class="demo-area">
+                        <style>
+                            @keyframes slide {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(100px); }
+                            }
+                            .demo-fillmode {
+                                animation: slide 2s;
+                                animation-fill-mode: forwards;
+                                background: #3498db;
+                                width: 50px;
+                                height: 50px;
+                            }
+                        </style>
+                        <div class="demo-fillmode"></div>
+                    </div>
+                    <div class="code-block">animation-fill-mode: forwards;</div>
+                </div>
+            </div>
+
+            <!-- Example 75-100 would continue with remaining properties including: -->
+            <!-- 
+                - Logical properties (inline-start/end) 
+                - Container queries
+                - Subgrid 
+                - Viewport units
+                - Scroll snap properties
+                - Color functions (lch(), oklch())
+                - Nesting
+                - And other modern CSS features
+            -->
+        </div>
+    </div>
+            <div class="category-title">Layout & Positioning</div>
+
+            <!-- Example 76: position: sticky -->
+            <div class="property-card">
+                <div class="property-header">position: sticky</div>
+                <div class="property-content">
+                    <div class="property-description">Hybrid of relative and fixed positioning</div>
+                    <div class="demo-area" style="height: 150px; overflow-y: scroll; position: relative;">
+                        <div style="position: sticky; top: 0; background: #3498db; padding: 10px;">
+                            Sticky Element
+                        </div>
+                        <div style="height: 300px;">Scrollable content</div>
+                    </div>
+                    <div class="code-block">
+                        position: sticky;<br>
+                        top: 0;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 77: aspect-ratio -->
+            <div class="property-card">
+                <div class="property-header">aspect-ratio</div>
+                <div class="property-content">
+                    <div class="property-description">Controls width/height proportions</div>
+                    <div class="demo-area">
+                        <div style="aspect-ratio: 16/9; background: #e74c3c;"></div>
+                    </div>
+                    <div class="code-block">aspect-ratio: 16/9;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Advanced Effects</div>
+
+            <!-- Example 78: clip-path -->
+            <div class="property-card">
+                <div class="property-header">clip-path</div>
+                <div class="property-content">
+                    <div class="property-description">Creates clipping regions</div>
+                    <div class="demo-area">
+                        <div style="clip-path: circle(50%); background: #3498db; height: 100px;"></div>
+                    </div>
+                    <div class="code-block">clip-path: circle(50%);</div>
+                </div>
+            </div>
+
+            <!-- Example 79: backdrop-filter -->
+            <div class="property-card">
+                <div class="property-header">backdrop-filter</div>
+                <div class="property-content">
+                    <div class="property-description">Applies filters to background</div>
+                    <div class="demo-area" style="position: relative;">
+                        <div style="background: url('https://placehold.co/300x200'); height: 100px;"></div>
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+                        backdrop-filter: blur(5px);"></div>
+                    </div>
+                    <div class="code-block">backdrop-filter: blur(5px);</div>
+                </div>
+            </div>
+
+            <div class="category-title">Modern Color</div>
+
+            <!-- Example 80: color-mix() -->
+            <div class="property-card">
+                <div class="property-header">color-mix()</div>
+                <div class="property-content">
+                    <div class="property-description">Mixes two colors</div>
+                    <div class="demo-area">
+                        <div style="background: color-mix(in srgb, #3498db 30%, #e74c3c 70%); height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        background: color-mix(<br>
+                        &nbsp;&nbsp;in srgb, #3498db 30%, #e74c3c 70%<br>
+                        );
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 81: accent-color -->
+            <div class="property-card">
+                <div class="property-header">accent-color</div>
+                <div class="property-content">
+                    <div class="property-description">Sets color of form controls</div>
+                    <div class="demo-area">
+                        <input type="checkbox" style="accent-color: #e74c3c; scale: 1.5;" checked>
+                    </div>
+                    <div class="code-block">accent-color: #e74c3c;</div>
+                </div>
+            </div>
+
+            <div class="category-title">Logical Properties</div>
+
+            <!-- Example 82: margin-inline-start -->
+            <div class="property-card">
+                <div class="property-header">margin-inline-start</div>
+                <div class="property-content">
+                    <div class="property-description">Flow-relative margin</div>
+                    <div class="demo-area">
+                        <div style="margin-inline-start: 40px; background: #3498db; height: 50px;"></div>
+                    </div>
+                    <div class="code-block">margin-inline-start: 40px;</div>
+                </div>
+            </div>
+
+            <!-- Examples 83-100 would continue with these properties: 
+                 83. scroll-snap-type
+                 84. container-type
+                 85. :has()
+                 86. @container
+                 87. nesting selector (&)
+                 88. offset-path  
+                 89. font-palette
+                 90. color-scheme
+                 91. lch()
+                 92. oklch()
+                 93. view-transition-name
+                 94. dyanmic viewport units
+                 95. initial-letter
+                 96. text-wrap: balance
+                 97. hanging-punctuation
+                 98. image-set()
+                 99. masonry (grid)
+                 100. subgrid
+            -->
+        </div>
+    </div>
+            <div class="category-title">Modern Layout Properties</div>
+
+            <!-- Example 76: position: sticky -->
+            <div class="property-card">
+                <div class="property-header">position: sticky</div>
+                <div class="property-content">
+                    <div class="property-description">Hybrid of relative and fixed positioning</div>
+                    <div class="demo-area" style="height: 150px; overflow-y: scroll;">
+                        <div style="position: sticky; top: 0; background: #3498db; padding: 5px;">
+                            Sticky Header
+                        </div>
+                        <div style="height: 300px;">Scrollable content</div>
+                    </div>
+                    <div class="code-block">
+                        position: sticky;<br>
+                        top: 0;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 77: aspect-ratio -->
+            <div class="property-card">
+                <div class="property-header">aspect-ratio</div>
+                <div class="property-content">
+                    <div class="property-description">Maintains element proportions</div>
+                    <div class="demo-area">
+                        <div style="aspect-ratio: 16/9; background: #e74c3c;"></div>
+                    </div>
+                    <div class="code-block">aspect-ratio: 16/9;</div>
+                </div>
+            </div>
+
+            <!-- Example 78: scroll-snap-type -->
+            <div class="property-card">
+                <div class="property-header">scroll-snap-type</div>
+                <div class="property-content">
+                    <div class="property-description">Controls scroll snapping behavior</div>
+                    <div class="demo-area" style="scroll-snap-type: y mandatory; height: 150px; overflow-y: scroll; position: relative;">
+                        <div style="height: 100px; scroll-snap-align: start; background: #3498db; margin-bottom: 10px;"></div>
+                        <div style="height: 100px; scroll-snap-align: start; background: #e74c3c;"></div>
+                    </div>
+                    <div class="code-block">
+                        scroll-snap-type: y mandatory;<br>
+                        scroll-snap-align: start;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Container Queries</div>
+
+            <!-- Example 79: container-type -->
+            <div class="property-card">
+                <div class="property-header">container-type</div>
+                <div class="property-content">
+                    <div class="property-description">Defines containment context</div>
+                    <div class="demo-area" style="container-type: inline-size; width: 200px;">
+                        <style>
+                            @container (min-width: 150px) {
+                                .container-demo-item {
+                                    background: #e74c3c;
+                                }
+                            }
+                        </style>
+                        <div class="container-demo-item" style="height: 50px; background: #3498db;"></div>
+                    </div>
+                    <div class="code-block">
+                        container-type: inline-size;<br><br>
+                        @container (min-width: 150px) {<br>
+                        &nbsp;&nbsp;.item { background: red; }<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 80: container-name -->
+            <div class="property-card">
+                <div class="property-header">container-name</div>
+                <div class="property-content">
+                    <div class="property-description">Names containment contexts</div>
+                    <div class="demo-area" style="container-type: inline-size; container-name: demo-container; width: 200px;">
+                        <style>
+                            @container demo-container (min-width: 150px) {
+                                .named-container-item {
+                                    background: #2ecc71;
+                                }
+                            }
+                        </style>
+                        <div class="named-container-item" style="height: 50px; background: #f1c40f;"></div>
+                    </div>
+                    <div class="code-block">
+                        container-name: demo-container;<br>
+                        container-type: inline-size;
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Advanced Selectors</div>
+
+            <!-- Example 81: :has() -->
+            <div class="property-card">
+                <div class="property-header">:has()</div>
+                <div class="property-content">
+                    <div class="property-description">Parent selector (selects containing elements)</div>
+                    <div class="demo-area">
+                        <style>
+                            .has-demo:has(.special-item) {
+                                border: 3px solid #e74c3c;
+                            }
+                        </style>
+                        <div class="has-demo" style="padding: 10px;">
+                            <div class="special-item" style="background: #3498db; height: 30px;"></div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        .container:has(.item) {<br>
+                        &nbsp;&nbsp;border: 3px solid red;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 82: @container -->
+            <div class="property-card">
+                <div class="property-header">@container</div>
+                <div class="property-content">
+                    <div class="property-description">Container query syntax (similar to @media)</div>
+                    <div class="demo-area" style="container-type: inline-size; width: 200px;">
+                        <style>
+                            @container (min-width: 180px) {
+                                .container-query-demo {
+                                    background: #e74c3c;
+                                }
+                            }
+                        </style>
+                        <div class="container-query-demo" style="height: 50px; background: #3498db;"></div>
+                    </div>
+                    <div class="code-block">
+                        @container (min-width: 180px) {<br>
+                        &nbsp;&nbsp;.item { background: red; }<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 83: Nesting (&) -->
+            <div class="property-card">
+                <div class="property-header">Nesting (&)</div>
+                <div class="property-content">
+                    <div class="property-description">Nests style rules (native CSS nesting)</div>
+                    <div class="demo-area">
+                        <style>
+                            .nesting-parent {
+                                background: #3498db;
+                                height: 50px;
+                                
+                                & .nested-child {
+                                    border: 2px solid white;
+                                    height: 30px;
+                                    margin: 10px;
+                                }
+                            }
+                        </style>
+                        <div class="nesting-parent">
+                            <div class="nested-child"></div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        .parent {<br>
+                        &nbsp;&nbsp;background: blue;<br>
+                        <br>
+                        &nbsp;&nbsp;& .child {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid white;<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 84: offset-path -->
+            <div class="property-card">
+                <div class="property-header">offset-path</div>
+                <div class="property-content">
+                    <div class="property-description">Defines motion path for animations</div>
+                    <div class="demo-area">
+                        <style>
+                            @keyframes move {
+                                to {
+                                    offset-distance: 100%;
+                                }
+                            }
+                            .offset-demo {
+                                width: 30px;
+                                height: 30px;
+                                background: #e74c3c;
+                                offset-path: path('M20,20 L80,20 L80,80 L20,80 Z');
+                                animation: move 4s infinite linear;
+                            }
+                        </style>
+                        <svg width="100" height="100" style="border: 1px solid #ccc;">
+                            <path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="#ccc"/>
+                            <foreignObject x="0" y="0" width="100" height="100">
+                                <div class="offset-demo"></div>
+                            </foreignObject>
+                        </svg>
+                    </div>
+                    <div class="code-block">
+                        offset-path: path('M20,20 L80,20 L80,80 L20,80 Z');<br>
+                        animation: move 4s infinite linear;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 85: font-palette -->
+            <div class="property-card">
+                <div class="property-header">font-palette</div>
+                <div class="property-content">
+                    <div class="property-description">Selects color palette for color fonts</div>
+                    <div class="demo-area">
+                        <style>
+                            @font-palette-values --custom {
+                                font-family: "Bungee";
+                                override-colors: 0 #e74c3c, 1 #2ecc71;
+                            }
+                            .palette-demo {
+                                font-palette: --custom;
+                            }
+                        </style>
+                        <div class="palette-demo" style="font-family: 'Bungee';">
+                            (Requires color font)
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        @font-palette-values --custom {<br>
+                        &nbsp;&nbsp;font-family: "FontName";<br>
+                        &nbsp;&nbsp;override-colors: 0 red, 1 green;<br>
+                        }<br>
+                        .element {<br>
+                        &nbsp;&nbsp;font-palette: --custom;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="category-title">Modern Color & Appearance</div>
+
+            <!-- Example 86: color-scheme -->
+            <div class="property-card">
+                <div class="property-header">color-scheme</div>
+                <div class="property-content">
+                    <div class="property-description">Specifies light/dark color schemes</div>
+                    <div class="demo-area" style="color-scheme: light dark; padding: 10px; border: 1px solid;">
+                        <style>
+                            @media (prefers-color-scheme: dark) {
+                                .scheme-demo { background: #333; color: white; }
+                            }
+                            @media (prefers-color-scheme: light) {
+                                .scheme-demo { background: white; color: black; }
+                            }
+                        </style>
+                        <div class="scheme-demo">
+                            System color scheme
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        color-scheme: light dark;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 87: lch() color -->
+            <div class="property-card">
+                <div class="property-header">lch()</div>
+                <div class="property-content">
+                    <div class="property-description">Perceptually uniform color space</div>
+                    <div class="demo-area">
+                        <div style="background: lch(50% 100 240); height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        background: lch(50% 100 240);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 88: oklch() -->
+            <div class="property-card">
+                <div class="property-header">oklch()</div>
+                <div class="property-content">
+                    <div class="property-description">Improved perceptual color space</div>
+                    <div class="demo-area">
+                        <div style="background: oklch(70% 0.2 280); height: 50px;"></div>
+                    </div>
+                    <div class="code-block">
+                        background: oklch(70% 0.2 280);
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">View Transitions</div>
+
+            <!-- Example 89: view-transition-name -->
+            <div class="property-card">
+                <div class="property-header">view-transition-name</div>
+                <div class="property-content">
+                    <div class="property-description">Creates named transition elements</div>
+                    <div class="demo-area">
+                        <style>
+                            @keyframes fade-in {
+                                from { opacity: 0; }
+                                to { opacity: 1; }
+                            }
+                            .transition-demo {
+                                view-transition-name: demo-transition;
+                                animation: fade-in 1s;
+                                height: 50px;
+                                background: #3498db;
+                            }
+                        </style>
+                        <div class="transition-demo"></div>
+                    </div>
+                    <div class="code-block">
+                        view-transition-name: demo-transition;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 90: view-transition-group -->
+            <div class="property-card">
+                <div class="property-header">::view-transition-group</div>
+                <div class="property-content">
+                    <div class="property-description">Pseudo-element for transition groups</div>
+                    <div class="demo-area">
+                        <div style="height: 50px; background: #f0f0f0; display: grid; place-items: center;">
+                            (Requires JS for full demo)
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        ::view-transition-group(*) {<br>
+                        &nbsp;&nbsp;animation-duration: 0.5s;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-title">Typography & Text</div>
+
+            <!-- Example 91: initial-letter -->
+            <div class="property-card">
+                <div class="property-header">initial-letter</div>
+                <div class="property-content">
+                    <div class="property-description">Creates drop cap effects</div>
+                    <div class="demo-area">
+                        <p style="initial-letter: 3; color: #e74c3c; font-size: 1.5em; line-height: 1;">
+                            <span style="initial-letter: 3;">D</span>rop cap styling
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        initial-letter: 3;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 92: text-wrap: balance -->
+            <div class="property-card">
+                <div class="property-header">text-wrap: balance</div>
+                <div class="property-content">
+                    <div class="property-description">Balances text wrapping</div>
+                    <div class="demo-area" style="width: 150px;">
+                        <p style="text-wrap: balance;">
+                            This text will wrap in a balanced way
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        text-wrap: balance;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 93: hanging-punctuation -->
+            <div class="property-card">
+                <div class="property-header">hanging-punctuation</div>
+                <div class="property-content">
+                    <div class="property-description">Controls punctuation alignment</div>
+                    <div class="demo-area" style="width: 150px;">
+                        <p style="hanging-punctuation: first;">
+                            "This quote hangs outside the box"
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        hanging-punctuation: first;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 94: image-set() -->
+            <div class="property-card">
+                <div class="property-header">image-set()</div>
+                <div class="property-content">
+                    <div class="property-description">Provides resolution-aware images</div>
+                    <div class="demo-area">
+                        <div style="height: 150px; background-image: image-set('image.jpg' 1x, 'image-2x.jpg' 2x); background-size: cover;"></div>
+                    </div>
+                    <div class="code-block">
+                        background-image: image-set(<br>
+                        &nbsp;&nbsp;'image.jpg' 1x,<br>
+                        &nbsp;&nbsp;'image-2x.jpg' 2x<br>
+                        );
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 95: Dynamic viewport units -->
+            <div class="property-card">
+                <div class="property-header">dv* units</div>
+                <div class="property-content">
+                    <div class="property-description">Dynamic viewport units</div>
+                    <div class="demo-area">
+                        <div style="height: 20px; background: #3498db;"></div>
+                        <small>(Resize to see effect)</small>
+                    </div>
+                    <div class="code-block">
+                        height: 100dvh; /* Dynamic viewport height */<br>
+                        width: 100dvw; /* Dynamic viewport width */
+                    </div>
+                </div>
+            </div>
+            <div class="category-title">Advanced Layout Techniques</div>
+
+            <!-- Example 96: Masonry Layout -->
+
+            <div class="property-card">
+                <div class="property-header">grid: masonry</div>
+                <div class="property-content">
+                    <div class="property-description">Creates cascading grid layouts</div>
+                    <div class="demo-area" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 50px; gap: 10px;">
+                        <!-- Fallback for browsers without masonry support -->
+                        <div style="background: #3498db; height: 70px;"></div>
+                        <div style="background: #e74c3c; height: 40px;"></div>
+                        <div style="background: #2ecc71; height: 90px;"></div>
+                        <div style="background: #f1c40f; height: 60px;"></div>
+                        <div style="background: #9b59b6; height: 30px;"></div>
+                    </div>
+                    <div class="code-block">
+                        display: grid;<br>
+                        grid-template-columns: repeat(3, 1fr);<br>
+                        grid-auto-rows: 50px;<br>
+                        gap: 10px;<br>
+                        /* masonry only works in Firefox currently */<br>
+                        grid-template-rows: masonry;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 97: Subgrid -->
+            <div class="property-card">
+                <div class="property-header">subgrid</div>
+                <div class="property-content">
+                    <div class="property-description">Nested grids inherit parent track sizes</div>
+                    <div class="demo-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div style="grid-column: 1 / 3; background: #3498db; height: 30px;"></div>
+                        <div style="display: grid; grid-template-columns: subgrid;">
+                            <div style="background: #e74c3c; height: 50px;">Subgrid Item</div>
+                            <div style="background: #2ecc71; height: 50px;">Subgrid Item</div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        display: grid;<br>
+                        grid-template-columns: subgrid;<br>
+                        /* Parent must be grid with explicit tracks */
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 98: ::grammar-error -->
+            <div class="property-card">
+                <div class="property-header">::grammar-error</div>
+                <div class="property-content">
+                    <div class="property-description">Styles browser-identified grammar mistakes</div>
+                    <div class="demo-area">
+                        <p style="position: relative;">
+                            <mark style="background: rgba(255,0,0,0.3);">Their is</mark> an example
+                            <small>(Simulated grammar error)</small>
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        ::grammar-error {<br>
+                        &nbsp;&nbsp;background: rgba(255,0,0,0.3);<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 99: font-size-adjust -->
+            <div class="property-card">
+                <div class="property-header">font-size-adjust</div>
+                <div class="property-content">
+                    <div class="property-description">Maintains x-height across fonts</div>
+                    <div class="demo-area">
+                        <p style="font-family: 'Times New Roman'; font-size-adjust: 0.58;">
+                            Consistent x-height text
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        font-size-adjust: 0.58;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 100: color-contrast() -->
+            <div class="property-card">
+                <div class="property-header">color-contrast()</div>
+                <div class="property-content">
+                    <div class="property-description">Automatically ensures accessible contrast</div>
+                    <div class="demo-area">
+                        <div style="background: #2ecc71; color: color-contrast(#2ecc71); padding: 10px;">
+                            Text with guaranteed contrast
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        color: color-contrast(#2ecc71);<br>
+                        /* Browser selects black/white based on WCAG */
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

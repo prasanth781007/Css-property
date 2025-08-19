@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tag Reference Guide</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #e74c3c;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar/Navigation */
+        .sidebar-toggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+            display: none;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem;
+            transform: translateX(0);
+            transition: var(--transition);
+            z-index: 999;
+            overflow-y: auto;
+        }
+
+        .sidebar.closed {
+            transform: translateX(-100%);
+        }
+
+        .sidebar h2 {
+            margin: 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        /* Tag Section */
+        .tag-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tag-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .tag-card {
+            margin-bottom: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tag-name {
+            font-weight: bold;
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .tag-name::before {
+            content: '<';
+            color: var(--accent);
+        }
+
+        .tag-name::after {
+            content: '>';
+            color: var(--accent);
+        }
+
+        .tag-description {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .tag-example {
+            background-color: #2d3e50;
+            color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .tag-example pre {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+
+        .copy-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .copy-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .copy-btn.copied {
+            background-color: #27ae60;
+        }
+
+        .tag-output {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        /* HTML Tag Specific Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        form {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        input, select, textarea {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .media-box {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 4px;
+            flex: 1 1 300px;
+        }
+
+        progress, meter {
+            width: 100%;
+            height: 20px;
+            margin: 0.5rem 0;
+        }
+
+        details {
+            margin: 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        dialog {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Tag Reference Guide</h1>
+        <p>60+ HTML tags with examples and explanations</p>
+    </header>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+
+    <aside class="sidebar" id="sidebar">
+        <h2>HTML Tags</h2>
+        <ul>
+            <li><a href="#document-structure">Document Structure</a></li>
+            <li><a href="#text-content">Text Content</a></li>
+            <li><a href="#sectioning">Sectioning</a></li>
+            <li><a href="#inline-text">Inline Text</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="css.html"><mark>css property</mark></a></li>
+            <li><a href="#scripting">Scripting</a></li>
+            <li><a href="#demarcating">Demarcating</a></li>
+            <li><a href="#interactive">Interactive</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+        <!-- Document Structure -->
+        <section class="tag-section" id="document-structure">
+            <h2>Document Structure</h2>
+            
+            <div class="tag-card">
+                <div class="tag-name">!DOCTYPE</div>
+                <div class="tag-description">Defines the document type and HTML version.</div>
+                <div class="tag-example">
+                    <pre>&lt;!DOCTYPE html&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;!DOCTYPE html&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">html</div>
+                <div class="tag-description">Root element of an HTML page.</div>
+                <div class="tag-example">
+                    <pre>&lt;html lang="en"&gt;&lt;/html&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;html lang=&quot;en&quot;&gt;&lt;/html&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">head</div>
+                <div class="tag-description">Contains meta information about the document.</div>
+                <div class="tag-example">
+                    <pre>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;head&gt;&#10;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;    &lt;title&gt;Document Title&lt;/title&gt;&#10;&lt;/head&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">body</div>
+                <div class="tag-description">Contains the visible page content.</div>
+                <div class="tag-example">
+                    <pre>&lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;body&gt;&#10;    &lt;h1&gt;Hello World&lt;/h1&gt;&#10;&lt;/body&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">meta</div>
+                <div class="tag-description">Defines metadata about an HTML document.</div>
+                <div class="tag-example">
+                    <pre>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Page description"&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;meta charset=&quot;UTF-8&quot;&gt;&#10;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;&lt;meta name=&quot;description&quot; content=&quot;Page description&quot;&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">title</div>
+                <div class="tag-description">Defines the title of the document (shown in browser tab).</div>
+                <div class="tag-example">
+                    <pre>&lt;title&gt;Page Title&lt;/title&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;title&gt;Page Title&lt;/title&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">link</div>
+                <div class="tag-description">Defines a link to an external resource (like CSS).</div>
+                <div class="tag-example">
+                    <pre>&lt;link rel="stylesheet" href="styles.css"&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">style</div>
+                <div class="tag-description">Defines internal CSS styles.</div>
+                <div class="tag-example">
+                    <pre>&lt;style&gt;
+    body {
+        font-family: Arial;
+    }
+&lt;/style&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;style&gt;&#10;    body {&#10;        font-family: Arial;&#10;    }&#10;&lt;/style&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">script</div>
+                <div class="tag-description">Defines client-side JavaScript.</div>
+                <div class="tag-example">
+                    <pre>&lt;script&gt;
+    console.log("Hello World");
+&lt;/script&gt;</pre>
+                </div>
+                <div class="tag-example">
+                    <pre>&lt;script src="script.js"&gt;&lt;/script&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;script&gt;&#10;    console.log(&quot;Hello World&quot;);&#10;&lt;/script&gt;">📋 Copy</button>
+                <button class="copy-btn" data-code="&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;">📋 Copy</button>
+            </div>
+        </section>
+
+        <!-- Text Content -->
+        <section class="tag-section" id="text-content">
+            <h2>Text Content</h2>
+            
+            <div class="tag-card">
+                <div class="tag-name">h1 - h6</div>
+                <div class="tag-description">Headings from level 1 (most important) to level 6 (least important).</div>
+                <div class="tag-example">
+                    <pre>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</pre>
+                </div>
+                <div class="tag-output">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <h6>Heading 6</h6>
+                </div>
+                <button class="copy-btn" data-code="&lt;h1&gt;Heading 1&lt;/h1&gt;&#10;&lt;h2&gt;Heading 2&lt;/h2&gt;&#10;&lt;h3&gt;Heading 3&lt;/h3&gt;&#10;&lt;h4&gt;Heading 4&lt;/h4&gt;&#10;&lt;h5&gt;Heading 5&lt;/h5&gt;&#10;&lt;h6&gt;Heading 6&lt;/h6&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">p</div>
+                <div class="tag-description">Defines a paragraph.</div>
+                <div class="tag-example">
+                    <pre>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</pre>
+                </div>
+                <div class="tag-output">
+                    <p>This is a paragraph of text.</p>
+                </div>
+                <button class="copy-btn" data-code="&lt;p&gt;This is a paragraph of text.&lt;/p&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">div</div>
+                <div class="tag-description">Defines a division or section.</div>
+                <div class="tag-example">
+                    <pre>&lt;div class="container"&gt;
+    &lt;p&gt;Content inside a div&lt;/p&gt;
+&lt;/div&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;div class=&quot;container&quot;&gt;&#10;    &lt;p&gt;Content inside a div&lt;/p&gt;&#10;&lt;/div&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">pre</div>
+                <div class="tag-description">Defines preformatted text (preserves spaces and line breaks).</div>
+                <div class="tag-example">
+                    <pre>&lt;pre&gt;
+function hello() {
+    console.log("Hello World");
+}
+&lt;/pre&gt;</pre>
+                </div>
+                <div class="tag-output">
+                    <pre>
+function hello() {
+    console.log("Hello World");
+}
+                    </pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;pre&gt;&#10;function hello() {&#10;    console.log(&quot;Hello World&quot;);&#10;}&#10;&lt;/pre&gt;">📋 Copy</button>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">hr</div>
+                <div class="tag-description">Defines a thematic break or horizontal rule.</div>
+                <div class="tag-example">
+                    <pre>&lt;p&gt;Section above&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Section below&lt;/p&gt;</pre>
+                </div>
+                <div class="tag-output">
+                    <p>Section above</p>
+                    <hr>
+                    <p>Section below</p>
+                </div>
+                <button class="copy-btn" data-code="&lt;p&gt;Section above&lt;/p&gt;&#10;&lt;hr&gt;&#10;&lt;p&gt;Section below&lt;/p&gt;">📋 Copy</button>
+            </div>
+        </section>
+
+        <!-- Sectioning -->
+        <section class="tag-section" id="sectioning">
+            <h2>Sectioning</h2>
+            
+            <div class="tag-card">
+                <div class="tag-name">header</div>
+                <div class="tag-description">Defines introductory content for a page or section.</div>
+                <div class="tag-example">
+                    <pre>&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+                      
+    &lt;p&gt;Tagline or description&lt;/p&gt;
+&lt;/header&gt;</pre>
+                </div>
+                <button class="copy-btn" data-code="&lt;header&gt;&#10;    &lt;h1&gt;Website Title&lt;/h1&gt;&#10;></button>
+                              <div class="tag-output">
+                <header style="background:#eee; padding:1rem; margin:1rem 0;">
+                    <h1>Website Title</h1>
+                    <p>Tagline or description</p>
+                </header>
+            </div>
+            <button class="copy-btn" data-code="&lt;header&gt;&#10;    &lt;h1&gt;Website Title&lt;/h1&gt;&#10;    &lt;p&gt;Tagline or description&lt;/p&gt;&#10;&lt;/header&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">nav</div>
+            <div class="tag-description">Defines navigation links.</div>
+            <div class="tag-example">
+                <pre>&lt;nav&gt;
+    &lt;a href="/"&gt;Home&lt;/a&gt;
+    &lt;a href="/about"&gt;About&lt;/a&gt;
+    &lt;a href="/contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <nav style="background:#333; padding:1rem;">
+                    <a href="#" style="color:white; margin-right:1rem;">Home</a>
+                    <a href="#" style="color:white; margin-right:1rem;">About</a>
+                    <a href="#" style="color:white;">Contact</a>
+                </nav>
+            </div>
+            <button class="copy-btn" data-code="&lt;nav&gt;&#10;    &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&#10;    &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&#10;    &lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&#10;&lt;/nav&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">main</div>
+            <div class="tag-description">Contains the main content of the document.</div>
+            <div class="tag-example">
+                <pre>&lt;main&gt;
+    &lt;h1&gt;Main Content&lt;/h1&gt;
+    &lt;p&gt;The main content goes here.&lt;/p&gt;
+&lt;/main&gt;</pre>
+            </div>
+            <button class="copy-btn" data-code="&lt;main&gt;&#10;    &lt;h1&gt;Main Content&lt;/h1&gt;&#10;    &lt;p&gt;The main content goes here.&lt;/p&gt;&#10;&lt;/main&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">article</div>
+            <div class="tag-description">Defines independent, self-contained content.</div>
+            <div class="tag-example">
+                <pre>&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content goes here...&lt;/p&gt;
+&lt;/article&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <article style="border:1px solid #ddd; padding:1rem; margin:1rem 0;">
+                    <h2>Article Title</h2>
+                    <p>Article content goes here...</p>
+                </article>
+            </div>
+            <button class="copy-btn" data-code="&lt;article&gt;&#10;    &lt;h2&gt;Article Title&lt;/h2&gt;&#10;    &lt;p&gt;Article content goes here...&lt;/p&gt;&#10;&lt;/article&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">section</div>
+            <div class="tag-description">Defines a section in a document.</div>
+            <div class="tag-example">
+                <pre>&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+&lt;/section&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <section style="border:1px solid #ddd; padding:1rem; margin:1rem 0;">
+                    <h2>Section Title</h2>
+                    <p>Section content...</p>
+                </section>
+            </div>
+            <button class="copy-btn" data-code="&lt;section&gt;&#10;    &lt;h2&gt;Section Title&lt;/h2&gt;&#10;    &lt;p&gt;Section content...&lt;/p&gt;&#10;&lt;/section&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">aside</div>
+            <div class="tag-description">Defines content aside from the page content.</div>
+            <div class="tag-example">
+                <pre>&lt;aside&gt;
+    &lt;h3&gt;Related Links&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <aside style="border:1px solid #ddd; padding:1rem; margin:1rem 0;">
+                    <h3>Related Links</h3>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <button class="copy-btn" data-code="&lt;aside&gt;&#10;    &lt;h3&gt;Related Links&lt;/h3&gt;&#10;    &lt;ul&gt;&#10;        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;&#10;        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;&#10;    &lt;/ul&gt;&#10;&lt;/aside&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">footer</div>
+            <div class="tag-description">Defines a footer for a document or section.</div>
+            <div class="tag-example">
+                <pre>&lt;footer&gt;
+    &lt;p&gt;&copy; 2023 My Website&lt;/p&gt;
+&lt;/footer&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <footer style="background:#333; color:white; padding:1rem; margin:1rem 0;">
+                    <p>© 2023 My Website</p>
+                </footer>
+            </div>
+            <button class="copy-btn" data-code="&lt;footer&gt;&#10;    &lt;p&gt;&amp;copy; 2023 My Website&lt;/p&gt;&#10;&lt;/footer&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Inline Text Semantics -->
+    <section class="tag-section" id="inline-text">
+        <h2>Inline Text Semantics</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">span</div>
+            <div class="tag-description">Generic inline container for styling.</div>
+            <div class="tag-example">
+                <pre>&lt;p&gt;This is &lt;span style="color:red"&gt;red text&lt;/span&gt; inside a paragraph.&lt;/p&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <p>This is <span style="color:red">red text</span> inside a paragraph.</p>
+            </div>
+            <button class="copy-btn" data-code="&lt;p&gt;This is &lt;span style=&quot;color:red&quot;&gt;red text&lt;/span&gt; inside a paragraph.&lt;/p&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">strong</div>
+            <div class="tag-description">Indicates important text (typically bold).</div>
+            <div class="tag-example">
+                <pre>&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt; text.&lt;/p&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <p>This is <strong>important</strong> text.</p>
+            </div>
+            <button class="copy-btn" data-code="&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt; text.&lt;/p&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">em</div>
+            <div class="tag-description">Emphasized text (typically italic).</div>
+            <div class="tag-example">
+                <pre>&lt;p&gt;This is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <p>This is <em>emphasized</em> text.</p>
+            </div>
+            <button class="copy-btn" data-code="&lt;p&gt;This is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">mark</div>
+            <div class="tag-description">Text highlighted for reference purposes.</div>
+            <div class="tag-example">
+                <pre>&lt;p&gt;This is &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <p>This is <mark>highlighted</mark> text.</p>
+            </div>
+            <button class="copy-btn" data-code="&lt;p&gt;This is &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">small</div>
+            <div class="tag-description">Side comments and small print.</div>
+            <div class="tag-example">
+                <pre>&lt;p&gt;Normal text &lt;small&gt;Small text&lt;/small&gt;&lt;/p&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <p>Normal text <small>Small text</small></p>
+            </div>
+            <button class="copy-btn" data-code="&lt;p&gt;Normal text &lt;small&gt;Small text&lt;/small&gt;&lt;/p&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Lists -->
+    <section class="tag-section" id="lists">
+        <h2>Lists</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">ul</div>
+            <div class="tag-description">Defines an unordered (bulleted) list.</div>
+            <div class="tag-example">
+                <pre>&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                </ul>
+            </div>
+            <button class="copy-btn" data-code="&lt;ul&gt;&#10;    &lt;li&gt;First item&lt;/li&gt;&#10;    &lt;li&gt;Second item&lt;/li&gt;&#10;&lt;/ul&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">ol</div>
+            <div class="tag-description">Defines an ordered (numbered) list.</div>
+            <div class="tag-example">
+                <pre>&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <ol>
+                    <li>First item</li>
+                    <li>Second item</li>
+                </ol>
+            </div>
+            <button class="copy-btn" data-code="&lt;ol&gt;&#10;    &lt;li&gt;First item&lt;/li&gt;&#10;    &lt;li&gt;Second item&lt;/li&gt;&#10;&lt;/ol&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">dl</div>
+            <div class="tag-description">Defines a description list.</div>
+            <div class="tag-example">
+                <pre>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>HyperText Markup Language</dd>
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets</dd>
+                </dl>
+            </div>
+            <button class="copy-btn" data-code="&lt;dl&gt;&#10;    &lt;dt&gt;HTML&lt;/dt&gt;&#10;    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;&#10;    &lt;dt&gt;CSS&lt;/dt&gt;&#10;    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;&#10;&lt;/dl&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Tables -->
+    <section class="tag-section" id="tables">
+        <h2>Tables</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">table</div>
+            <div class="tag-description">Defines an HTML table.</div>
+            <div class="tag-example">
+                <pre>&lt;table&gt;
+    &lt;caption&gt;Monthly Sales&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Month&lt;/th&gt;
+        &lt;th&gt;Sales&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;January&lt;/td&gt;
+        &lt;td&gt;$100&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <table style="width:100%">
+                    <caption>Monthly Sales</caption>
+                    <tr>
+                        <th>Month</th>
+                        <th>Sales</th>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                </table>
+            </div>
+            <button class="copy-btn" data-code="&lt;table&gt;&#10;    &lt;caption&gt;Monthly Sales&lt;/caption&gt;&#10;    &lt;tr&gt;&#10;        &lt;th&gt;Month&lt;/th&gt;&#10;        &lt;th&gt;Sales&lt;/th&gt;&#10;    &lt;/tr&gt;&#10;    &lt;tr&gt;&#10;        &lt;td&gt;January&lt;/td&gt;&#10;        &lt;td&gt;$100&lt;/td&gt;&#10;    &lt;/tr&gt;&#10;&lt;/table&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Forms -->
+    <section class="tag-section" id="forms">
+        <h2>Forms</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">form</div>
+            <div class="tag-description">Defines an HTML form for user input.</div>
+            <div class="tag-example">
+                <pre>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <form style="background:#f5f5f5; padding:1rem;">
+                    <label for="example-name">Name:</label>
+                    <input type="text" id="example-name" style="display:block; margin-bottom:1rem;">
+                    
+                    <label for="example-email">Email:</label>
+                    <input type="email" id="example-email" style="display:block; margin-bottom:1rem;">
+                    
+                    <button type="button" style="background:#3498db; color:white; border:none; padding:0.5rem 1rem;">Submit</button>
+                </form>
+            </div>
+            <button class="copy-btn" data-code="&lt;form action=&quot;/submit&quot; method=&quot;post&quot;&gt;&#10;    &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;&#10;    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;&#10;    &#10;    &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;&#10;    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;&#10;    &#10;    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&#10;&lt;/form&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Media -->
+    <section class="tag-section" id="media">
+        <h2>Media</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">img</div>
+            <div class="tag-description">Embeds an image in the document.</div>
+            <div class="tag-example">
+                <pre>&lt;img src="image.jpg" alt="Description of image" width="300" height="200"&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <img src="https://placehold.co/300x200" alt="Placeholder image">
+            </div>
+            <button class="copy-btn" data-code="&lt;img src=&quot;image.jpg&quot; alt=&quot;Description of image&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">audio</div>
+            <div class="tag-description">Embeds sound content.</div>
+            <div class="tag-example">
+                <pre>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <button class="copy-btn" data-code="&lt;audio controls&gt;&#10;    &lt;source src=&quot;audio.mp3&quot; type=&quot;audio/mpeg&quot;&gt;&#10;    Your browser does not support the audio element.&#10;&lt;/audio&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">video</div>
+            <div class="tag-description">Embeds video content.</div>
+            <div class="tag-example">
+                <pre>&lt;video width="320" height="240" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <video width="320" height="240" controls>
+                    <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <button class="copy-btn" data-code="&lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;&#10;    &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt;&Your browser does not support the video tag.
+&lt;/video&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Interactive Elements -->
+    <section class="tag-section" id="interactive">
+        <h2>Interactive Elements</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">details</div>
+            <div class="tag-description">Creates a disclosure widget with content shown only when toggled open.</div>
+            <div class="tag-example">
+                <pre>&lt;details&gt;
+    &lt;summary&gt;Click to see more&lt;/summary&gt;
+    &lt;p&gt;Hidden content that appears when expanded.&lt;/p&gt;
+&lt;/details&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <details>
+                    <summary>Click to see more</summary>
+                    <p>Hidden content that appears when expanded.</p>
+                </details>
+            </div>
+            <button class="copy-btn" data-code="&lt;details&gt;&#10;    &lt;summary&gt;Click to see more&lt;/summary&gt;&#10;    &lt;p&gt;Hidden content that appears when expanded.&lt;/p&gt;&#10;&lt;/details&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">dialog</div>
+            <div class="tag-description">Creates a dialog box or modal window.</div>
+            <div class="tag-example">
+                <pre>&lt;dialog open id="myDialog"&gt;
+    &lt;p&gt;This is a dialog box&lt;/p&gt;
+    &lt;button onclick="document.getElementById('myDialog').close()"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;</pre>
+            </div>
+            <div class="tag-output">
+                <dialog open style="padding:1rem;">
+                    <p>This is a dialog box</p>
+                    <button onclick="this.parentElement.close()" style="background:#3498db; color:white; border:none; padding:0.5rem 1rem;">Close</button>
+                </dialog>
+            </div>
+            <button class="copy-btn" data-code="&lt;dialog open id=&quot;myDialog&quot;&gt;&#10;    &lt;p&gt;This is a dialog box&lt;/p&gt;&#10;    &lt;button onclick=&quot;document.getElementById('myDialog').close()&quot;&gt;Close&lt;/button&gt;&#10;&lt;/dialog&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- Scripting -->
+    <section class="tag-section" id="scripting">
+        <h2>Scripting</h2>
+        
+        <div class="tag-card">
+            <div class="tag-name">script</div>
+            <div class="tag-description">Defines client-side JavaScript or links to an external script file.</div>
+            <div class="tag-example">
+                <pre>&lt;script&gt;
+    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+&lt;/script&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;</pre>
+            </div>
+            <button class="copy-btn" data-code="&lt;script&gt;&#10;    document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;;&#10;&lt;/script&gt;">📋 Copy</button>
+            <button class="copy-btn" data-code="&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;">📋 Copy</button>
+        </div>
+        
+        <div class="tag-card">
+            <div class="tag-name">noscript</div>
+            <div class="tag-description">Defines alternative content for users without client-side scripting.</div>
+            <div class="tag-example">
+                <pre>&lt;noscript&gt;
+    &lt;p&gt;Your browser does not support JavaScript!&lt;/p&gt;
+&lt;/noscript&gt;</pre>
+            </div>
+            <button class="copy-btn" data-code="&lt;noscript&gt;&#10;    &lt;p&gt;Your browser does not support JavaScript!&lt;/p&gt;&#10;&lt;/noscript&gt;">📋 Copy</button>
+        </div>
+    </section>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Toggle sidebar on mobile
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            mainContent.classList.toggle('expanded');
+        });
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const code = this.getAttribute('data-code');
+                navigator.clipboard.writeText(code).then(() => {
+                    this.textContent = '✓ Copied!';
+                    this.classList.add('copied');
+                    setTimeout(() => {
+                        this.textContent = '📋 Copy';
+                        this.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close sidebar if open on mobile
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('open');
+                        mainContent.classList.remove('expanded');
+                    }
+                }
+            });
+        });
+
+        // Animate sections when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.tag-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
